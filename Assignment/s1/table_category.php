@@ -47,7 +47,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Price</th>
-            <th></th>
+            <th class="thead-button"></th>
         </thead>
         <tbody>
             <?php foreach ($category as $item) {?>
