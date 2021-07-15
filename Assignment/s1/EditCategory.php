@@ -10,26 +10,28 @@
     <link rel="stylesheet" href="style/EditForm.css"/>
 </head>
 <body>
+    <?php
+        include_once "Database.php";
+        $categoryId = $_GET["id"];
+        $txt_sql = "select * from listcategory where id = $categoryId";
+        $listCategory = queryDB($txt_sql);
+        $category = $listCategory[0];
+    ?>
 <div class="edit-form">
     <h1>Edit category</h1>
-    <div class="form">
+    <form action="UpdateCategory.php" method="post" class="form">
         <div class="form-group">
-            <label class="label-input">Id</label>
-            <input type="text" name="id" class="form-control" />
+            <input type="hidden" name="id" class="form-control" value="<?php echo $category["id"] ?>" />
         </div>
         <div class="form-group">
             <label class="label-input">Category name</label>
-            <input type="text" name="id" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label class="label-input">Quantity product</label>
-            <input type="text" name="id" class="form-control" />
+            <input type="text" name="name" class="form-control" value="<?php echo $category["name"] ?>" />
         </div>
         <div class="btn-group-control">
             <button onclick="location.href='ListCategory.php'" type="button" class="btn btn-secondary btn-lg">Close</button>
-            <button onclick="location.href='ListCategory.php'" type="button" class="btn btn-primary btn-lg">Submit</button>
+            <button onclick="location.href='ListCategory.php'" type="submit" class="btn btn-primary btn-lg">Submit</button>
         </div>
-    </div>
+    </form>
 
 </div>
 </body>

@@ -11,26 +11,30 @@
      <link rel="stylesheet" href="style/AddNewForm.css"/>
  </head>
  <body>
+   <?php
+        $categoryId = $_GET["id"];
+   ?>
     <div class="add-new-form">
         <h1>Add new product</h1>
-        <div class="form">
-            <div class="form-group">
-                <label class="label-input">Id</label>
-                <input type="text" name="id" class="form-control" />
-            </div>
+        <form class="form" action="SaveAddNewProduct.php" method="post">
             <div class="form-group">
                 <label class="label-input">Product name</label>
-                <input type="text" name="id" class="form-control" />
+                <input type="text" name="name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="label-input">Quanity</label>
+                <input type="number" name="quantity" min="1" class="form-control" />
             </div>
             <div class="form-group">
                 <label class="label-input">Price</label>
-                <input type="text" name="id" class="form-control" />
+                <input type="text" name="price" class="form-control" />
             </div>
+            <input type="hidden" name="categoryid" value="<?php echo $categoryId ?>" />
             <div class="btn-group-control">
-                <button onclick="location.href='table_category.php'" type="button" class="btn btn-secondary btn-lg">Close</button>
-                <button onclick="location.href='table_category.php'" type="button" class="btn btn-primary btn-lg">Submit</button>
+                <button onclick="location.href='ListProduct.php?id=<?php echo $categoryId?>'" type="button" class="btn btn-secondary btn-lg">Close</button>
+                <button type="submit"  class="btn btn-primary btn-lg">Submit</button>
             </div>
-        </div>
+        </form>
 
     </div>
  </body>

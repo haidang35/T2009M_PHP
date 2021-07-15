@@ -13,20 +13,16 @@
 <body>
     <div class="add-new-form">
         <h1>Add new category</h1>
-        <div class="form">
-            <div class="form-group">
-                <label class="label-input">Id</label>
-                <input type="text" name="id" class="form-control" />
-            </div>
+        <form class="form" action="SaveAddNewCategory.php" method="post">
             <div class="form-group">
                 <label class="label-input">Category</label>
-                <input type="text" name="id" class="form-control" />
+                <input type="text" name="name" class="form-control" />
             </div>
             <div class="btn-group-control">
                 <button onclick="location.href='ListCategory.php'" type="button" class="btn btn-secondary btn-lg">Close</button>
-                <button onclick="location.href='ListCategory.php'" type="button" class="btn btn-primary btn-lg">Submit</button>
+                <button type="submit" onclick="location.href='ListCategory.php'"  class="btn btn-primary btn-lg">Submit</button>
             </div>
-        </div>
+        </form>
 
     </div>
 </body>
